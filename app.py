@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import kagglehub
 import os
 
 st.set_page_config(
@@ -11,12 +10,7 @@ st.set_page_config(
 
 st.title("🧬 Enzyme & Metabolic Reaction Analyzer")
 
-# Download and load dataset
-dataset_path = kagglehub.dataset_download(
-    "thedevastator/metxbiodb-metabolite-biotransformations"
-)
-
-csv_file = os.path.join(dataset_path, "metxbiodb.csv")
+csv_file = "metxbiodb.csv"
 df = pd.read_csv(csv_file)
 
 st.sidebar.title("Navigation")
